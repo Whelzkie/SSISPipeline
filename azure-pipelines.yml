@@ -15,6 +15,16 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- task: BuildSSIS@1
+  inputs:
+    solnPath: 'GlobalSMESSISSample/GlobalSMESSISSample.sln'
+    solnConfigName: 'GlobalSMESSISSample'
+    projPath: 'GlobalSMESSISSample/GlobalSMESSISSample/GlobalSMESSISSample.dtproj'
+    projConfigName: 'GlobalSMESSISSample'
+    cmdSwitch: 'build'
+    devenvVersion: 'VS2017comm'
+
+
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
